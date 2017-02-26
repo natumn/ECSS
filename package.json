@@ -1,0 +1,23 @@
+{
+  "name": "ecssapplication",
+  "version": "1.0.0",
+  "description": "ECSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nktafuse/ECSS.git"
+  },
+  "author": "koki natsume",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nktafuse/ECSS/issues"
+  },
+  "homepage": "https://github.com/nktafuse/ECSS#readme",
+  "dependencies": {
+    "config": "^1.25.1",
+    "express": "^4.14.1"
+  }
+}
