@@ -10,20 +10,7 @@ ECSSとは電子カルテ共有システムのアプリケーションです。
 
 ## Description
 
-Applicationから患者のカルテデータをBlockChainDBに保存して、病院間で共有できるようにするのが、目的です。
-
-## Demo
-
-## VS(なかったらいいや)
-
 ## Requirement
 
 ## Usage
-
-## install
-
-##Contribution
-
-
-
 
