@@ -26,12 +26,14 @@ class FamiliesController < ApplicationController
 
   def edit
     @family = Family.find(params[:id])
+    @patient = @family.patient
+    @hospital = @patient.hospital
   end
 
   def update
     @family = Family.find(params[:id])
     if @family.update(family_params)
-      redirect_to controller: :familys, action: :show, id: @family.id,  notice: "編集しました"
+      redirect_to controller: :families, action: :show, id: @family.id,  notice: "編集しました"
     else
       @patient = @family.patient
       @hospital = @patient.hospital
