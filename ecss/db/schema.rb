@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170304054232) do
+ActiveRecord::Schema.define(version: 20170304181649) do
 
   create_table "families", force: :cascade do |t|
     t.integer  "patient_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170304054232) do
     t.string   "disease",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "dash_id"
   end
 
 end
