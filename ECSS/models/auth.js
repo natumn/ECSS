@@ -1,14 +1,11 @@
-main = (process.env.NODE_ENV === 'production')?'10.0.82.198':'localhost';
-
+var domain = (process.env.NODE_ENV === 'production')?'10.0.82.198':'localhost';
 var mongoose = require('mongoose');
 var url = 'mongodb://' + domain + '/user';
 var db  = mongoose.createConnection(url, function(err, res){
-    if(err)
-    {
+    if(err){
         console.log('Error connected: ' + url + ' - ' + err);
     }
-    else
-    {
+    else{
         console.log('Success connected: ' + url);
     }
 });
@@ -16,6 +13,6 @@ var db  = mongoose.createConnection(url, function(err, res){
 var AuthSchema = new mongoose.Schema({
     hospitalId: String,
     passWord: String
-},{collection: 'info'});
+});
 
-exports.Auth = db.model('Auth', AuthSchema);
+module.exports = mongoose.model('Auth', AuthSchema);
