@@ -19,7 +19,7 @@ class PatientsController < ApplicationController
     if @patient.save
       redirect_to controller: :patients, action: :show, id: @patient.id,  notice: "登録しました"
     else
-      @patient = Patient.find(params[:patient_id])
+      @patient = Patient.find(params[:id])
       @hospital = @patient.hospital
       render action: :new
     end
@@ -35,7 +35,7 @@ class PatientsController < ApplicationController
     if @patient.update(patient_params)
       redirect_to controller: :patients, action: :show, id: @patient.id,  notice: "編集しました"
     else
-      @patient = Patient.find(params[:patient_id])
+      @patient = Patient.find(params[:id])
       @hospital = @patient.hospital
       render action: :edit
     end
