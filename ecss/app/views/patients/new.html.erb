@@ -1,8 +1,8 @@
-<%= form_for @hospital do |f| %>
-  <% if @hospital.errors.any? %>
+<%= form_for [@hospital, @patient] do |f| %>
+  <% if @patient.errors.any? %>
     <div class="alert alert-danger text-center" role="alert">
-      <h4><%= @hospital.errors.count %>件の未記入のところがあります。</h4>
-      <% @hospital.errors.full_messages.each do |message| %>
+      <h4><%= @patient.errors.count %>件の未記入のところがあります。</h4>
+      <% @patient.errors.full_messages.each do |message| %>
         <p><%= message %></p>
       <% end %>
     </div>
@@ -12,14 +12,14 @@
       <div class="form-group">
         <%= f.label :名前, class: "col-md-4 control-label" %>
         <div class="col-md-5">
-          <%= f.text_field :name, placeholder: "病院名", class: "form-control" %>
+          <%= f.text_field :name, placeholder: "名前", class: "form-control" %>
         </div>
       </div>
 
       <div class="form-group">
-        <%= f.label :ログインID, class: "col-md-4 control-label" %>
+        <%= f.label :生年月日, class: "col-md-4 control-label" %>
         <div class="col-md-5">
-          <%= f.text_field :username, placeholder: "ログインID（半角英数字）", class: "form-control" %>
+          <%= f.date_select :birthday, class: "form-control" %>
         </div>
       </div>
 
@@ -33,7 +33,7 @@
       <div class="form-group">
         <%= f.label :メールアドレス, class: "col-md-4 control-label" %>
         <div class="col-md-5">
-          <%= f.text_field :mail, placeholder: "メールアドレス", class: "form-control" %>
+          <%= f.email_field :mail, placeholder: "メールアドレス", class: "form-control" %>
         </div>
       </div>
 
@@ -52,10 +52,24 @@
       </div>
 
       <div class="form-group">
-        <div class="col-sm-5 col-sm-offset-4 update-button">
+        <%= f.label :病気名, class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.text_field :disease, placeholder: "病気名", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :ダッシュID, class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.text_field :dash_id, placeholder: "ダッシュID", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-5 col-sm-offset-4">
           <%= f.submit "登録する", class: "btn btn-danger btn-group-justified" %>
         </div>
-      </div><!-- form-group update-button -->
-    </div><!-- form-horizontal -->
-  </div><!-- row -->
+      </div>
+    </div>
+  </div>
 <% end %>
