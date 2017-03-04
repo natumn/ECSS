@@ -1,5 +1,8 @@
 <div class="right-content__main">
   <%= link_to "編集", edit_hospital_path(@hospital), class: "btn btn-default" %>
+  <%= link_to "患者一覧", hospital_patients_path(@hospital), class: "btn btn-default" %>
+  <%= link_to "患者登録", new_hospital_patient_path(@hospital), class: "btn btn-default" %>
+
   <table class="table table-striped table-bordered">
     <p class="title-bar bg-default">
       病院情報

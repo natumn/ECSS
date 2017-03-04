@@ -1,14 +1,16 @@
 class PatientsController < ApplicationController
   def index
-    @hosiptal = Hosiptal.find(params[:hosiptal_id])
+    @hospital = Hospital.find(params[:hospital_id])
     @patients = @hospital.patients
   end
 
   def show
     @patient = Patient.find(params[:id])
+    @hospital = @patient.hospital
   end
 
   def new
+    @hospital = Hospital.find(params[:hospital_id])
     @patient = Patient.new
   end
 
@@ -18,12 +20,14 @@ class PatientsController < ApplicationController
       redirect_to controller: :patients, action: :show, id: @patient.id,  notice: "登録しました"
     else
       @patient = Patient.find(params[:patient_id])
+      @hospital = @patient.hospital
       render action: :new
     end
   end
 
   def edit
     @patient = Patient.find(params[:id])
+    @hospital = @patient.hospital
   end
 
   def update
@@ -32,12 +36,13 @@ class PatientsController < ApplicationController
       redirect_to controller: :patients, action: :show, id: @patient.id,  notice: "編集しました"
     else
       @patient = Patient.find(params[:patient_id])
+      @hospital = @patient.hospital
       render action: :edit
     end
   end
 
   private
   def patient_params
-    params.require(:patient).permit(:name, :birthday, :postcode, :address, :tel, :mail, :disease).merge(hosiptal_id: params[:hosiptal_id])
+    params.require(:patient).permit(:name, :birthday, :postcode, :address, :tel, :mail, :disease).merge(hospital_id: params[:hospital_id])
   end
 end
