@@ -59,6 +59,13 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :ダッシュID, class: "col-md-2 control-label" %>
+        <div class="col-md-10">
+          <%= f.text_field :dash_id, placeholder: "ダッシュID", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
           <div class="col-sm-10 col-sm-offset-2">
             <%= f.submit "登録する", class: "btn btn-danger" %>
           </div>
