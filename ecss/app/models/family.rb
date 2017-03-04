@@ -6,6 +6,5 @@ class Family < ApplicationRecord
   validates :mail, presence: true
   validates :postcode, presence: true
   validates :address, presence: true
-  validates :disease, presence: true
 
 end

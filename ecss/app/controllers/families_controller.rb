@@ -2,18 +2,24 @@ class FamiliesController < ApplicationController
 
   def show
     @family = Family.find(params[:id])
+    @patient = @family.patient
+    @hospital = @patient.hospital
   end
 
   def new
+    @hospital = Hospital.find(params[:hospital_id])
+    @patient = Patient.find(params[:patient_id])
     @family = Family.new
   end
 
   def create
     @family = Family.new(family_params)
     if @family.save
-      redirect_to controller: :familys, action: :show, id: @family.id,  notice: "登録しました"
+      redirect_to controller: :families, action: :show, id: @family.id,  notice: "登録しました"
     else
-      @family = Family.find(params[:family_id])
+      @family = Family.find(params[:id])
+      @patient = @family.patient
+      @hospital = @patient.hospital
       render action: :new
     end
   end
@@ -27,7 +33,8 @@ class FamiliesController < ApplicationController
     if @family.update(family_params)
       redirect_to controller: :familys, action: :show, id: @family.id,  notice: "編集しました"
     else
-      @family = Family.find(params[:family_id])
+      @patient = @family.patient
+      @hospital = @patient.hospital
       render action: :edit
     end
   end
