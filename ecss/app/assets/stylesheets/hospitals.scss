@@ -1,3 +1,21 @@
-// Place all the styles related to the hospitals controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//new.html.erb
+
+.form-horizontal{
+    margin: 100px 0 0 0;
+}
+
+.update-button input{
+    margin: 40px 0 0 0;
+    height: 60px;
+}
+
+
+//show.html.erb
+.title-bar {
+    font-size: 25px;
+    margin: 20px 0 10px 0;
+}
+
+.edit-button {
+    margin: 40px 0 0 0;
+}
