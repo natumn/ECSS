@@ -15,7 +15,7 @@
         <td><%= link_to patient.id, hospital_patient_path(@hospital, patient) %></td>
         <td><%= patient.name %></td>
         <td><%= patient.disease %></td>
-        <td>(未実装)</td>
+        <td class="text-right"><%= patient.age %>歳</td>
         <td><%= patient.address %></td>
         <td><%= patient.tel %></td>
       </tr>
