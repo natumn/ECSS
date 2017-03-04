@@ -58,11 +58,18 @@
         </div>
       </div>
 
-      <div class="form-group update-button">
-          <div class="col-sm-5 col-sm-offset-4">
-              <%= f.submit "更新する", class: "btn btn-danger btn-group-justified" %>
-          </div>
+      <div class="form-group">
+        <%= f.label :ダッシュID, class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.text_field :dash_id, placeholder: "ダッシュID", class: "form-control" %>
         </div>
+      </div>
+
+      <div class="form-group update-button">
+        <div class="col-sm-5 col-sm-offset-4">
+          <%= f.submit "更新する", class: "btn btn-danger btn-group-justified" %>
+        </div>
+      </div>
     </div>
   </div>
 <% end %>

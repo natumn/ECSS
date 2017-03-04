@@ -3,7 +3,6 @@ class Hospital < ApplicationRecord
 
   validates :name, presence: true
   validates :username, presence: true, uniqueness: true
-  validates :password, confirmation: { :if => :validate_password? }
   validates :tel, presence: true
   validates :mail, presence: true
   validates :postcode, presence: true
