@@ -1,0 +1,8 @@
+add_subdirectory(virtual_machine)
+add_subdirectory(crypto)
+add_subdirectory(repository)
+add_subdirectory(server)
+add_subdirectory(connection)
+add_subdirectory(service)
+add_subdirectory(protobuf)
+add_subdirectory(config)

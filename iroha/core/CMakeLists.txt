@@ -1,0 +1,7 @@
+add_subdirectory(consensus)
+add_subdirectory(repository)
+add_subdirectory(infra)
+add_subdirectory(util)
+add_subdirectory(crypto)
+add_subdirectory(validation)
+add_subdirectory(transaction_builder)
