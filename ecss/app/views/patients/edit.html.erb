@@ -19,7 +19,7 @@
       <div class="form-group">
         <%= f.label :生年月日, class: "col-md-4 control-label" %>
         <div class="col-md-5">
-          <%= f.date_select :birthday, class: "form-control" %>
+          <%= f.date_select :birthday, {default_year: Time.now.year - 20, use_month_numbers: :true, start_year: Time.now.year - 70, end_year:  Time.now.year} %>
         </div>
       </div>
 
